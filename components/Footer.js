@@ -1,5 +1,4 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
 import Home from '../tabs/Home';
 import Charity from '../tabs/Charity';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
@@ -54,10 +53,3 @@ export default function Footer(){
             </Tab.Navigator>
     );
 };
-
-
-const styles = StyleSheet.create({
-    container: {
-      
-    },
-  });
