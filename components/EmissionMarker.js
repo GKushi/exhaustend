@@ -8,14 +8,14 @@ export default function EmissionMarker(props){
     <View style={styles.card}>
         <ProgressCircle 
             percent={proc}
-            radius={60}
+            radius={80}
             borderWidth={20}
             bgColor={'white'}
             color={'green'}
             shadowColor={'red'}
             >
-        <Text style={styles.text}>{proc}%</Text>
-        <Text>bez emisji</Text>
+        <Text style={styles.proctext}>{proc}%</Text>
+        <Text style={styles.emissiontext}>bez emisji</Text>
         </ProgressCircle>
     </View>
     );
@@ -23,17 +23,22 @@ export default function EmissionMarker(props){
 
 const styles = StyleSheet.create({
     card: {
-        borderRadius:15,
+        borderRadius:30,
         elevation:10,
         backgroundColor: 'white',
         shadowOffset: {width:3, height:3},
         shadowColor: '#000000',
         shadowOpacity: 0.5,
         shadowRadius:2,
-        padding:8,
+        padding:10,
         margin:5
     },
-    text:{
-
+    proctext:{
+        fontWeight:'bold',
+        fontSize:25
+    },
+    emissiontext:{
+        fontSize:15,
+        marginBottom:10
     }
 });

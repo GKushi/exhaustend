@@ -5,6 +5,7 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import Statistics from '../tabs/Statistics';
 import Settings from '../tabs/Settings';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { mainMotive, grey } from './colors';
 
 
 const Tab = createMaterialBottomTabNavigator();
@@ -13,8 +14,8 @@ export default function Footer(){
     return(
             <Tab.Navigator
             initialRouteName="Home"
-            activeColor='#269450'
-            inactiveColor='#414c45'
+            activeColor={mainMotive}
+            inactiveColor={grey}
             barStyle={{ backgroundColor:'white', height:50}}
             screenOptions={{ headerShown: false}}
             >

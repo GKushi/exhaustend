@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, Linking, TouchableOpacity } from 'react-native';
+import { backGround } from './colors';
 
 export default function CharityCard(props){
     const imageUrl = props.imageUrl;
@@ -22,7 +23,7 @@ const styles = StyleSheet.create({
     card: {
         borderRadius:15,
         elevation:10,
-        backgroundColor: '#effbf4',
+        backgroundColor: backGround,
         shadowOffset: {width:3, height:3},
         shadowColor: '#000000',
         shadowOpacity: 0.5,
