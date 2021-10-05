@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Linking } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import ProgressCircle from 'react-native-progress-circle'
 
 export default function EmissionMarker(props){

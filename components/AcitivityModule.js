@@ -1,23 +1,26 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, Image, Linking } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 export default function AcitvityModule(props){
 
     const [activityColor, setActivityColor] = useState('red');
     const [activityIcon, setActivityIcon] = useState('car-hatchback');
+    const [activityType, setActivityType] = useState('Dystans ze spalinami');
 
     const distance = props.distance;
-    const activityType = props.activityType;
     const goodActivity = props.goodActivity;
 
     useEffect(() =>{
         if(goodActivity){
         setActivityColor('green');
         setActivityIcon('bicycle');
+        setActivityType('Czysty dystans')
         }
         return() =>{
-            setActivityColor('red')
+            setActivityColor('red');
+            setActivityIcon('car-hatchback');
+            setActivityType('Dystans ze spalinami');
         }
     },[goodActivity]);
     

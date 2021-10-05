@@ -8,8 +8,8 @@ export default function Charity() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <ScrollView> 
-        <Text style={styles.text}>Zbiórki charytatywne</Text>
+      <Text style={styles.text}>Zbiórki charytatywne</Text>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.charityCardContainer}>
           <CharityCard imageUrl='https://zrzutka.pl/uploads/chipin/xthfdf/cover/orginal/c2a5c5b24691dcefa5f360d88593bd44.jpeg' title='Zalane schronisko w Wadowicach Dolnych' link='https://google.com/'/>
           <CharityCard imageUrl='https://zrzutka.pl/uploads/chipin/25c6ud/cover/orginal/3bc50bbeaae246106f778afcff08b400.jpeg' title='Ratujmy życie Konrada, który sam nie bał się go ofiarować nam wszystkim.' link='https://zrzutka.pl/25c6ud'/>
@@ -28,12 +28,17 @@ const styles = StyleSheet.create({
   },
   text:{
     fontSize: 30,
-    margin: 20,
+    margin: 15,
     fontWeight:'bold',
   },
   charityCardContainer:{
     backgroundColor:'white',
     borderTopRightRadius:25,
     paddingTop:30,
+    shadowOffset: {width:3, height:3},
+    shadowColor: '#000000',
+    shadowOpacity: 1,
+    shadowRadius:2,
+    elevation:10
   }
 });
