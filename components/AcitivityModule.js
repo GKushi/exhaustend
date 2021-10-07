@@ -32,7 +32,7 @@ export default function AcitvityModule(props){
             <MaterialCommunityIcons name={activityIcon} color='black' size={50} style={{ alignSelf:'center', width:'25%' }}/>
             <View style={styles.activityContainer}>
                 <Text style={styles.acitivityType}>{activityType}</Text>
-                <Text style={styles.activityTime}> 10:20-23:11</Text>
+                <Text style={styles.activityTime}> {props.id}</Text>
             </View>
             <Text style={styles.distance}>{distance} km</Text>
         </View>

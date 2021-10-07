@@ -7,7 +7,6 @@ import Settings from '../tabs/Settings';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { mainMotive, grey } from './colors';
 
-
 const Tab = createMaterialBottomTabNavigator();
 
 export default function Footer(){
@@ -27,19 +26,19 @@ export default function Footer(){
                     ),
                     }}
                 />
+                <Tab.Screen name='map' component={Statistics} 
+                    options={{
+                    tabBarLabel: 'Mapa',
+                    tabBarIcon: ({ color }) => (
+                        <MaterialCommunityIcons name="map" color={color} size={25} />
+                    ),
+                    }}
+                />
                 <Tab.Screen name="Charity" component={Charity} 
                     options={{
                     tabBarLabel: 'Zbiórki',
                     tabBarIcon: ({ color }) => (
                         <MaterialCommunityIcons name="paw" color={color} size={25} />
-                    ),
-                    }}
-                />
-                <Tab.Screen name='Statistics' component={Statistics} 
-                    options={{
-                    tabBarLabel: 'Statystyki',
-                    tabBarIcon: ({ color }) => (
-                        <MaterialCommunityIcons name="chart-line" color={color} size={25} />
                     ),
                     }}
                 />
