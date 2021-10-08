@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import ProgressCircle from 'react-native-progress-circle'
+import { mainMotive} from './colors';
 
 export default function EmissionMarker(props){
     const proc = props.proc;
@@ -11,7 +12,7 @@ export default function EmissionMarker(props){
             radius={80}
             borderWidth={20}
             bgColor={'white'}
-            color={'green'}
+            color={mainMotive}
             shadowColor={'red'}
             >
         <Text style={styles.proctext}>{proc}%</Text>
