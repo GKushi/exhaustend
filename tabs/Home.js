@@ -29,7 +29,7 @@ export default function Home({ czerwonyDystans, zielonyDystans}) {
         <View style={styles.emissions}>
           <EmissionMarker proc={procent ? procent : 0} />
           <View style={styles.modules} >
-            <HomePageModule title='Łącznie' unit={lacznyDystans + ' km'} />
+            <HomePageModule title='Łącznie' unit={Math.round(lacznyDystans*100)/100 + ' km'} />
             <HomePageModule title='Wytworzone CO2' unit={lacznaEmisja + ' kg'}/>
           </View>
         </View>
@@ -41,8 +41,8 @@ export default function Home({ czerwonyDystans, zielonyDystans}) {
           </View>
            : 
            <>
-            <AcitvityModule goodActivity distance={zielonyDystans}/>
-            <AcitvityModule distance={czerwonyDystans}/>
+            <AcitvityModule goodActivity distance={Math.round(zielonyDystans*100)/100}/>
+            <AcitvityModule distance={Math.round(czerwonyDystans*100)/100}/>
           </>
         }
 

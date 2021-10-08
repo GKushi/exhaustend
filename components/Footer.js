@@ -43,10 +43,6 @@ export default function Footer(){
       };
 
       const addRoute = () => {
-        if (!z || !c) {
-          alert("Enter input");
-          return false;
-        }
         db.transaction(txn => {
           txn.executeSql(
             `INSERT INTO routes (dystZ, dystC) VALUES (?,?)`,
@@ -124,14 +120,15 @@ export default function Footer(){
             screenOptions={{ headerShown: false }}
         >
                 <Tab.Screen name="Home"
-                    children={() => <Home routes={routes} czerwonyDystans={czerwonyDystans} zielonyDystans={zielonyDystans} />}
+                    children={() => <Home czerwonyDystans={czerwonyDystans} zielonyDystans={zielonyDystans} />}
                     options={{
                         tabBarLabel: 'Strona Główna',
                         tabBarIcon: ({ color }) => (
                             <MaterialCommunityIcons name="home" color={color} size={25} />
                         ),
                     }} />
-                <Tab.Screen name='map' component={Statistics}
+                <Tab.Screen name='map' 
+                children={() => <Statistics setC={setC} setZ={setZ} addRoute={addRoute} />}
                     options={{
                         tabBarLabel: 'Mapa',
                         tabBarIcon: ({ color }) => (

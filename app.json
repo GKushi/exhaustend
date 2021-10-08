@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "exhaustend",
-    "slug": "exhaustend",
+    "name": "mobileApp",
+    "slug": "mobileApp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -17,15 +17,14 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "exhaustend.project"
+      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "exhaustend.project"
+      "package": "wonderooo.mobileApp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
