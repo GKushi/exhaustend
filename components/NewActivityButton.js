@@ -7,7 +7,7 @@ export default function NewActivityButton(){
 
 
     return(
-    <TouchableOpacity style={styles.container} onPressIn={()=> alert('Pressed')}>
+    <TouchableOpacity style={styles.container} onPressIn={()=> alert('W trakcie prac')}>
         <AntDesign name='plus' color='white' size={35} style={{ alignSelf:'center' }}/>
     </TouchableOpacity>
     );

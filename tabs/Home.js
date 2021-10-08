@@ -1,21 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect } from 'react';
-import { StyleSheet, View, Text, ScrollView, FlatList, LogBox, Image } from 'react-native';
+import { StyleSheet, View, Text, ScrollView, LogBox, Image } from 'react-native';
 import EmissionMarker from '../components/EmissionMarker';
 import HomePageModule from '../components/HomePageModule';
 import { backGround } from '../components/colors';
 import NewActivityButton from '../components/NewActivityButton';
 import logo from '../components/ExhaustEndHorizontal1.png';
+import AcitvityModule from '../components/AcitivityModule';
 
 
 
-export default function Home({renderRoute, routes}) {
+export default function Home({ czerwonyDystans, zielonyDystans}) {
   
   useEffect(() => {
     LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
   }, [])
-
-
+  const lacznyDystans = zielonyDystans + czerwonyDystans;
+  const procent = Math.floor((zielonyDystans/lacznyDystans)*100)
+  const emisjaNaKilometr = 0.1865
+  const lacznaEmisja = Math.floor(czerwonyDystans*emisjaNaKilometr)
 
   return (
     <View style={styles.container}>
@@ -24,24 +27,24 @@ export default function Home({renderRoute, routes}) {
         <Image source={logo} style={{ width:'70%',height:80, alignSelf:'center',resizeMode:'contain', marginBottom:20 }}/>
         
         <View style={styles.emissions}>
-          <EmissionMarker proc={80} />
+          <EmissionMarker proc={procent ? procent : 0} />
           <View style={styles.modules} >
-            <HomePageModule title='Łącznie' unit='500 km' />
-            <HomePageModule title='Wytworzone CO2' unit='500 kg'/>
+            <HomePageModule title='Łącznie' unit={lacznyDystans + ' km'} />
+            <HomePageModule title='Wytworzone CO2' unit={lacznaEmisja + ' kg'}/>
           </View>
         </View>
         <ScrollView style={styles.activity}>
-        {routes.length > 0 ?
-          <FlatList
-          data={routes}
-          renderItem={renderRoute}
-          keyExtractor={cat => cat.id.toString()}
-          showsVerticalScrollIndicator={false}
-          /> : 
-        <View>
+        {!czerwonyDystans && !zielonyDystans ?
+          <View>
           <Text style={{ width:'80%', alignSelf:'center', textAlign:'center', fontSize:20, fontWeight:'bold'}}> Nie masz jeszcze zadnej aktywności. Ruszaj się zdrowo! </Text>
           <Text style={{ width:'80%', alignSelf:'center', textAlign:'center'}}> Pierwszy wpis pojawi się po skończonym spacerze lub przejazdzce.</Text>
-        </View>}
+          </View>
+           : 
+           <>
+            <AcitvityModule goodActivity distance={zielonyDystans}/>
+            <AcitvityModule distance={czerwonyDystans}/>
+          </>
+        }
 
         <View style={{ backgroundColor:'white', height:50 }}></View>
 

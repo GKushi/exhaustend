@@ -24,7 +24,9 @@ export default function AcitvityModule(props){
         }
     },[goodActivity]);
     
-
+    if(!distance){
+        return(null)
+    }
     return(
     <View style={styles.card}>
         <View style={{...styles.colorType, backgroundColor:activityColor, borderColor:activityColor}}></View>
