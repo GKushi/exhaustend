@@ -10,8 +10,6 @@ export default function Settings() {
     <View style={styles.container}>
       <StatusBar style="auto" />
       <Text>Settings</Text>
-
-
     </View>
   );
 }

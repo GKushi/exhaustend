@@ -21,27 +21,31 @@ export default function Home({renderRoute, routes}) {
     <View style={styles.container}>
         <StatusBar style="auto" />
         
-        {/* <Text style={{fontSize: 30, margin: 15, fontWeight:'bold'}}>Strona główna</Text> */}
-        
         <Image source={logo} style={{ width:'70%',height:80, alignSelf:'center',resizeMode:'contain', marginBottom:20 }}/>
         
         <View style={styles.emissions}>
-          <EmissionMarker proc={99} />
+          <EmissionMarker proc={80} />
           <View style={styles.modules} >
             <HomePageModule title='Łącznie' unit='500 km' />
             <HomePageModule title='Wytworzone CO2' unit='500 kg'/>
           </View>
         </View>
-        {routes.id ? <ScrollView style={styles.activity} >
+        <ScrollView style={styles.activity}>
+        {routes.length > 0 ?
           <FlatList
           data={routes}
           renderItem={renderRoute}
           keyExtractor={cat => cat.id.toString()}
           showsVerticalScrollIndicator={false}
-          />
-          <View style={{ backgroundColor:'white', height:50 }}></View>
-        </ScrollView> : 
-        <View></View>}
+          /> : 
+        <View>
+          <Text style={{ width:'80%', alignSelf:'center', textAlign:'center', fontSize:20, fontWeight:'bold'}}> Nie masz jeszcze zadnej aktywności. Ruszaj się zdrowo! </Text>
+          <Text style={{ width:'80%', alignSelf:'center', textAlign:'center'}}> Pierwszy wpis pojawi się po skończonym spacerze lub przejazdzce.</Text>
+        </View>}
+
+        <View style={{ backgroundColor:'white', height:50 }}></View>
+
+        </ScrollView>
         
 
         <NewActivityButton/>
