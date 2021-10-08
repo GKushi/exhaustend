@@ -17,11 +17,19 @@ Funkcjonalność aplikacji jest oparta na sensorach ruchu w urządzeniu mobilnym
   <div align="center">
   <table>
     <tr>
-      <td width="33%">
+      <td width="25%">
         <img src="./img/demo_1.png" />
       </td>
-      <td width="33%">
+      <td width="25%">
         <img src="./img/demo_2.png" />
+      </td>
+    </tr>
+     <tr>
+      <td width="25%">
+        Aplikacja pokazuje dystans przebyty w sposób czysty i emisyjny oraz inne statystyki.
+      </td>
+      <td width="25%">
+        Aplikacja wyświetla przebytą trasę na mapie.
       </td>
     </tr>
   </table>
@@ -34,6 +42,19 @@ Używa bazy danych [SQLite](https://sqlite.org/index.html), a także [Map Google
 2. Wejść w Play Store -> Ustawienia profilu (Prawy górny róg) -> Play Protect -> Wyłącz na czas instalacji aplikacji
 3. Otworzyć plik .apk i zgodzić się na wszystkie opcje wyboru proponowane przez instalator
 4. Po instalacji wejść w systemowe ustawienia aplikacji (Przytrzymać ikonę zainstalowanej aplikacji i wejść w informacje) -> Wejść w Uprawnienia i zezwolić na wszystkie wymagane uprawnienia
+
+## W przyszłości
+* Tygodniowe statystyki
+* Transport miejski
+* Wyszukiwanie lepszych tras
+* Historia tras w dniowych statystykach
+* Ustawienia
+  - Spalanie samochodu
+  - Rodzaj paliwa
+* Intuicyjne wyśrodkowanie mapy
+* Port na iOS
+* Powiadomienia PushUp
+* Zbieranie informacji przy zamkniętej aplikacji
 
 ---
 ## Struktura projektu
